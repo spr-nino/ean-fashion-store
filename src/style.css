@@ -1,0 +1,601 @@
+:root{font-family:Arial,'Microsoft YaHei',sans-serif;color:#171717;background:#f4f3f0}*{box-sizing:border-box}body{margin:0}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #171717;background:transparent;padding:11px 16px}.button,.primary{display:inline-block;background:#171717;color:#fff;border:1px solid #171717;padding:13px 20px}.secondary{margin-left:8px}header{height:76px;padding:0 5vw;display:flex;align-items:center;border-bottom:1px solid #222;position:sticky;top:0;background:#f4f3f0f2;z-index:5}nav{display:flex;gap:30px;font-size:13px}.logo{position:absolute;left:50%;transform:translateX(-50%);font-size:28px;letter-spacing:8px;font-weight:600}header aside{margin-left:auto;display:flex;gap:18px;font-size:13px}.menu{display:none;border:0;padding:0;font-size:20px}.hero{height:620px;position:relative;overflow:hidden;background:#d8d5cf}.heroVisual{position:absolute;inset:0;background:url('/images/products/ean-product-01-01.webp') center/cover;filter:grayscale(.5);opacity:.8}.heroCopy{position:absolute;left:8%;bottom:14%}.hero h1{font-size:clamp(38px,5vw,72px);font-weight:300;margin:18px 0}.hero p{font-size:16px}.bar{background:#111;color:#fff;padding:14px;text-align:center;font-size:12px;letter-spacing:1px}.section,.shopPage,.cartPage,.checkout,.success,.journal,.productPage{max-width:1320px;margin:auto;padding:90px 5vw}.sectionHead,.shopTop{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}.section h2,.shopPage h1{font-size:32px;font-weight:300;margin:10px 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px 20px}.cardPic{position:relative;aspect-ratio:3/4;background:#ddd;overflow:hidden}.cardPic img{width:100%;height:100%;object-fit:cover;display:block}.cardPic .hoverImg{position:absolute;inset:0;opacity:0;transition:opacity .35s}.cardPic:hover .hoverImg{opacity:1}.cardPic .fav{position:absolute;right:8px;top:8px;border:0;font-size:23px;padding:3px}.cardPic em{position:absolute;left:8px;top:8px;font-size:10px;font-style:normal;background:#fff;padding:4px 7px}.cardName{border:0;padding:0;margin-top:13px;font-weight:500;text-align:left;width:100%}.card small,.card strong{display:block;margin-top:8px}.card small{font-size:11px;color:#777}.quickTrigger{width:100%;margin-top:13px;font-size:12px}.quick{display:flex;gap:6px;margin-top:13px}.quick select{flex:1}.quick button{padding:8px}.story{display:grid;grid-template-columns:1fr 1fr;min-height:480px;background:#dedbd4}.storyImg{background:url('/images/editorial/ean-editorial-01.png') center/cover}.story article{padding:12vw}.story h2{font-size:40px;font-weight:300}.shopTop input{width:320px;padding:12px;border:0;border-bottom:1px solid}.shopFilters{display:flex;gap:20px;align-items:center;border-bottom:1px solid #ccc;padding-bottom:22px;margin-bottom:20px}.shopFilters button{border:0;padding:8px 0}.active{border-bottom:1px solid!important}.count{font-size:12px;color:#777}.empty{text-align:center;padding:120px 20px;min-height:300px}.productPage{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.gallery>img{width:100%;aspect-ratio:3/4;object-fit:cover}.gallery>div{display:flex;gap:10px;margin-top:12px}.gallery button{padding:0;border:0;width:70px}.gallery button.sel{outline:1px solid}.gallery button img{width:100%;aspect-ratio:3/4;object-fit:cover}.productInfo h1{font-size:42px;font-weight:300;margin:15px 0}.productInfo>strong{font-size:20px}.productInfo>p{line-height:1.8;color:#555;margin:30px 0}.productInfo label{display:block;margin-top:24px;font-size:13px}.swatch,.sizes button{margin:10px 8px 0 0}.sizes .selected{background:#111;color:#fff}.sizeGuide{display:block;font-size:12px;text-decoration:underline;margin:18px 0}.qty{display:flex;align-items:center;gap:18px;margin:25px 0}.qty button{padding:6px 12px}.productInfo .primary{width:100%;text-align:center}.productInfo details{border-top:1px solid #ccc;padding:18px 0;font-size:13px}.cartPage{position:relative}.cartList{max-width:700px}.cartItem{display:flex;gap:20px;border-top:1px solid #ccc;padding:22px 0}.cartItem img{width:130px;height:170px;object-fit:cover}.cartItem h3{margin:0 0 10px;font-weight:400}.remove{border:0;padding:0;text-decoration:underline;font-size:12px}.summary{position:absolute;right:5vw;top:170px;width:300px}.checkout form{max-width:520px;display:grid;gap:18px}.checkout label{display:grid;gap:8px;font-size:13px}.checkout input,.checkout textarea,.checkout select{padding:12px;border:1px solid #aaa;background:transparent}.checkout textarea{min-height:100px}.notice{background:#ebe7de;padding:14px;max-width:520px}.error{color:#a33}.success{text-align:center;padding-top:160px}.journalGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.journalGrid img{width:100%;aspect-ratio:4/5;object-fit:cover}.journalGrid h2{font-weight:300}.journalGrid article>a{text-decoration:underline;font-size:12px}footer{background:#171717;color:#fff;padding:70px 5vw;display:grid;gap:18px}footer b{font-size:32px;letter-spacing:8px}footer a{color:#fff}@media(max-width:700px){header{height:60px}.menu{display:block}nav{display:none;position:absolute;top:60px;left:0;background:#f4f3f0;width:100%;padding:24px;flex-direction:column}.open{display:flex}.logo{font-size:22px}header aside{gap:8px;font-size:11px}.hero{height:530px}.heroCopy{left:6%;bottom:9%}.hero h1{font-size:38px}.section,.shopPage,.cartPage,.checkout,.success,.journal,.productPage{padding:60px 5vw}.sectionHead,.shopTop{display:block}.shopTop input{width:100%;margin:20px 0}.shopFilters{overflow:auto;white-space:nowrap}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 12px}.story,.productPage{grid-template-columns:1fr}.storyImg{height:300px}.story article{padding:50px 8vw}.productInfo h1{font-size:34px}.summary{position:static;width:auto;border-top:1px solid;padding-top:20px;margin-top:30px}.journalGrid{grid-template-columns:1fr}.cartItem img{width:100px;height:130px}}
+
+
+table{border-collapse:collapse;margin-top:35px;width:100%;max-width:700px}th,td{border-bottom:1px solid #bbb;padding:16px;text-align:left;font-size:13px}
+
+/* -------------------------------------------------------------------------- */
+/* EAN controls                                                                */
+/*                                                                            */
+/* The page started with a few one-off button rules.  These aliases keep the */
+/* existing markup working while the shared Button/IconButton primitives are */
+/* introduced.  All controls use the same quiet, editorial treatment.        */
+/* -------------------------------------------------------------------------- */
+:root{
+  --ean-ink:#171717;
+  --ean-paper:#f4f3f0;
+  --ean-line:rgba(23,23,23,.34);
+  --ean-line-strong:rgba(23,23,23,.72);
+  --ean-muted:#6d6a64;
+  --ean-danger:#754944;
+  --ean-danger-hover:#963f36;
+  --ean-control-motion:180ms ease-out;
+}
+
+/* Shared text controls.  .ui-* is used by the reusable primitives and
+   .ean-* is kept as a stable public alias for page-level controls. */
+.ean-button,.ui-button,
+a.button,a.primary,a.secondary,
+button.button,button.primary,button.secondary,
+.text-link-button,.danger-action{
+  align-items:center;
+  appearance:none;
+  border-radius:2px;
+  box-shadow:none;
+  cursor:pointer;
+  display:inline-flex;
+  font:inherit;
+  justify-content:center;
+  line-height:1.2;
+  max-width:100%;
+  min-height:44px;
+  min-width:40px;
+  position:relative;
+  text-decoration:none;
+  transition:background-color var(--ean-control-motion),border-color var(--ean-control-motion),color var(--ean-control-motion),opacity var(--ean-control-motion),transform 100ms ease-out;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.ean-button,.ui-button,
+a.button,a.primary,
+button.button,button.primary{
+  background:var(--ean-ink);
+  border:1px solid var(--ean-ink);
+  color:var(--ean-paper);
+  gap:10px;
+  padding:11px 20px;
+  white-space:nowrap;
+}
+
+.ean-button--sm,.ui-button--sm{font-size:12px;min-height:40px;padding:8px 14px}
+.ean-button--md,.ui-button--md{font-size:13px;min-height:44px;padding:11px 20px}
+.ean-button--lg,.ui-button--lg{font-size:14px;min-height:50px;padding:13px 24px}
+
+.ean-button--primary,.ui-button--primary{background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.ean-button--secondary,.ui-button--secondary,
+a.secondary,button.secondary{
+  background:transparent;
+  border:1px solid var(--ean-line-strong);
+  color:var(--ean-ink);
+  padding:11px 20px;
+}
+.ean-button--ghost,.ui-button--ghost{
+  background:rgba(244,243,240,.72);
+  border:1px solid var(--ean-line);
+  color:var(--ean-ink);
+}
+.ean-button--text,.ui-button--text,
+.text-link-button,.danger-action{
+  background:transparent;
+  border:1px solid transparent;
+  color:var(--ean-ink);
+  min-height:40px;
+  padding:8px 2px;
+}
+.ean-button--danger,.ui-button--danger,.danger-action{
+  background:transparent;
+  border-color:transparent;
+  color:var(--ean-danger);
+}
+
+.ui-button--primary:hover:not(:disabled),
+a.button:hover,a.primary:hover,button.primary:hover,
+.ean-button--primary:hover:not(:disabled){background:#353535;border-color:#353535}
+.ean-button--secondary:hover:not(:disabled),.ui-button--secondary:hover:not(:disabled),
+a.secondary:hover,button.secondary:hover,
+.ean-button--ghost:hover:not(:disabled),.ui-button--ghost:hover:not(:disabled){background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.ean-button--text::after,.ui-button--text::after,
+.text-link-button::after{
+  background:currentColor;
+  bottom:5px;
+  content:'';
+  height:1px;
+  left:2px;
+  position:absolute;
+  transform:scaleX(.35);
+  transform-origin:left;
+  transition:transform var(--ean-control-motion);
+  width:calc(100% - 4px);
+}
+.ean-button--text:hover:not(:disabled)::after,.ui-button--text:hover:not(:disabled)::after,
+.text-link-button:hover:not(:disabled)::after{transform:scaleX(1)}
+.danger-action:hover:not(:disabled),.ean-button--danger:hover:not(:disabled),.ui-button--danger:hover:not(:disabled){color:var(--ean-danger-hover)}
+
+/* Directional icons stay quiet and move only a few pixels on hover. */
+.ean-button__arrow,.ean-button__icon--trailing,.ui-button__icon--trailing{transition:transform var(--ean-control-motion)}
+.ean-button:hover:not(:disabled) .ean-button__arrow,
+.ean-button:hover:not(:disabled) .ean-button__icon--trailing,
+.ui-button:hover:not(:disabled) .ui-button__icon--trailing{transform:translateX(3px)}
+.ean-button__icon,.ui-button__icon,.ean-icon-button__icon,.ui-icon-button__icon{align-items:center;display:inline-flex;flex:0 0 auto;justify-content:center}
+.ean-button__icon>svg,.ui-button__icon>svg,.ean-icon-button__icon>svg,.ui-icon-button__icon>svg{height:1em;stroke-width:1.7;width:1em}
+
+/* Icon controls (heart, search, account, bag and menu). */
+.ean-icon-button,.ui-icon-button{
+  align-items:center;
+  appearance:none;
+  background:transparent;
+  border:1px solid transparent;
+  border-radius:2px;
+  box-shadow:none;
+  color:var(--ean-ink);
+  cursor:pointer;
+  display:inline-flex;
+  flex:0 0 auto;
+  justify-content:center;
+  min-height:40px;
+  min-width:40px;
+  padding:0;
+  position:relative;
+  transition:background-color var(--ean-control-motion),border-color var(--ean-control-motion),color var(--ean-control-motion),opacity var(--ean-control-motion),transform 100ms ease-out;
+  -webkit-tap-highlight-color:transparent;
+}
+.ean-icon-button--sm,.ui-icon-button--sm{min-height:40px;min-width:40px}
+.ean-icon-button--md,.ui-icon-button--md{min-height:44px;min-width:44px}
+.ean-icon-button--lg,.ui-icon-button--lg{min-height:48px;min-width:48px}
+.ean-icon-button:hover:not(:disabled),.ui-icon-button:hover:not(:disabled){background:rgba(23,23,23,.07);border-color:var(--ean-line)}
+.ean-icon-button--primary,.ui-icon-button--primary{background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.ean-icon-button--primary:hover:not(:disabled),.ui-icon-button--primary:hover:not(:disabled){background:#353535;border-color:#353535}
+.ean-icon-button--secondary,.ui-icon-button--secondary{border-color:var(--ean-line-strong)}
+.ean-icon-button--secondary:hover:not(:disabled),.ui-icon-button--secondary:hover:not(:disabled){background:var(--ean-ink);color:var(--ean-paper)}
+.ean-icon-button__icon>svg,.ui-icon-button__icon>svg{height:20px;stroke-width:1.7;width:20px}
+/* Ghost icon controls only need a quiet tint on hover; reserve the solid
+   treatment for explicit primary/secondary controls. */
+.ean-icon-button--ghost:hover:not(:disabled),.ui-icon-button--ghost:hover:not(:disabled){background:rgba(23,23,23,.07);border-color:var(--ean-line);color:var(--ean-ink)}
+
+/* Header action links share the icon-button hit target even though navigation
+   remains semantically a link. */
+.header-action,.mobile-menu{
+  align-items:center;
+  background:transparent;
+  border:1px solid transparent;
+  border-radius:2px;
+  color:var(--ean-ink);
+  display:inline-flex;
+  flex:0 0 auto;
+  justify-content:center;
+  min-height:40px;
+  min-width:40px;
+  padding:0;
+  position:relative;
+  transition:background-color var(--ean-control-motion),border-color var(--ean-control-motion),color var(--ean-control-motion),transform 100ms ease-out;
+}
+.header-action,nav a,footer a{align-items:center;display:inline-flex;justify-content:center;min-height:40px;min-width:40px}
+.mobile-menu,.ui-icon-button.mobile-menu{display:none}
+.header-action:hover,.mobile-menu:hover{background:rgba(23,23,23,.07);border-color:var(--ean-line)}
+.header-action:focus-visible,.mobile-menu:focus-visible,nav a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.header-action>svg,.mobile-menu>svg{height:20px;stroke-width:1.7;width:20px}
+.header-cart{
+  align-items:center;
+  border:1px solid transparent;
+  border-radius:2px;
+  display:inline-flex;
+  gap:7px;
+  min-height:40px;
+  min-width:40px;
+  padding:0 3px;
+  position:relative;
+  transition:background-color var(--ean-control-motion),border-color var(--ean-control-motion),color var(--ean-control-motion),transform 100ms ease-out;
+}
+.header-cart:hover{background:rgba(23,23,23,.07);border-color:var(--ean-line)}
+.header-cart:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.header-action:active,.header-cart:active,.mobile-menu:active{transform:scale(.98)}
+.header-cart>svg{height:20px;stroke-width:1.7;width:20px}
+.header-cart>span:not(.cart-badge){white-space:nowrap}
+.cart-badge{
+  align-items:center;
+  background:var(--ean-ink);
+  border:1px solid var(--ean-paper);
+  border-radius:50%;
+  color:var(--ean-paper);
+  display:inline-flex;
+  font-size:9px;
+  font-variant-numeric:tabular-nums;
+  height:17px;
+  justify-content:center;
+  line-height:1;
+  min-width:17px;
+  padding:0 4px;
+  position:absolute;
+  right:-1px;
+  top:1px;
+}
+
+/* A shared focus ring keeps keyboard navigation visible without a heavy glow. */
+a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+button:focus-visible,
+a.button:focus-visible,a.primary:focus-visible,a.secondary:focus-visible,
+.ean-button:focus-visible,.ui-button:focus-visible,
+.ean-icon-button:focus-visible,.ui-icon-button:focus-visible,
+.text-link-button:focus-visible,.danger-action:focus-visible,
+.cardName:focus-visible,.quickTrigger:focus-visible,.fav:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:3px;
+}
+.ean-button:active:not(:disabled),.ui-button:active:not(:disabled),
+.ean-icon-button:active:not(:disabled),.ui-icon-button:active:not(:disabled),
+button:active:not(:disabled){transform:scale(.98)}
+.ean-button:disabled,.ui-button:disabled,.ean-icon-button:disabled,.ui-icon-button:disabled,
+button:disabled,[aria-disabled='true']{cursor:not-allowed;opacity:.44}
+
+/* Loading indicators are compact and prevent repeat submission in the shared
+   components through their real disabled attribute. */
+.ean-button__spinner,.ui-button__spinner,.ean-icon-button__spinner,.ui-icon-button__spinner{
+  animation:ean-control-spin 800ms linear infinite;
+  flex:0 0 auto;
+  height:1em;
+  width:1em;
+}
+.ean-button[data-loading='true'],.ui-button[data-loading='true'],
+.ean-icon-button[data-loading='true'],.ui-icon-button[data-loading='true'],
+.is-loading{cursor:wait;pointer-events:none}
+@keyframes ean-control-spin{to{transform:rotate(360deg)}}
+
+/* Short-lived feedback after a quick add or other reversible action. */
+.ean-toast{
+  align-items:center;
+  background:var(--ean-ink);
+  border:1px solid rgba(244,243,240,.42);
+  border-radius:2px;
+  bottom:24px;
+  box-shadow:none;
+  color:var(--ean-paper);
+  display:flex;
+  font-size:12px;
+  left:50%;
+  letter-spacing:.02em;
+  max-width:min( calc(100vw - 32px), 420px );
+  min-height:42px;
+  padding:10px 16px;
+  position:fixed;
+  transform:translateX(-50%);
+  z-index:20;
+}
+
+/* Product card quick actions. The panel is clipped to the image and enters
+   from below on desktop; the mobile rule below turns it into normal flow. */
+.cardPic{isolation:isolate}
+.cardMedia{display:block;height:100%;width:100%}
+.cardName{display:block}
+.sr-only{
+  border:0;
+  clip:rect(0 0 0 0);
+  clip-path:inset(50%);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  white-space:nowrap;
+  width:1px;
+}
+.cardPic>.quick-panel,.cardPic>.quick-sizes{
+  background:rgba(244,243,240,.96);
+  bottom:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  left:0;
+  opacity:0;
+  padding:9px 10px;
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  transform:translateY(105%);
+  /* Keep the trigger keyboard-focusable while visually resting below the
+     image.  :focus-within promotes the panel for keyboard users. */
+  transition:opacity 200ms ease-out,transform 200ms ease-out;
+  z-index:2;
+}
+.cardPic:hover>.quick-panel,.cardPic>.quick-panel:focus-within,
+.cardPic:hover>.quick-sizes,.cardPic>.quick-sizes:focus-within,
+.cardPic>.quick-panel.is-open,.cardPic>.quick-sizes.is-open{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.quick-panel button,.quick-panel select,.quick-sizes button,.quick-sizes select{
+  align-items:center;
+  border:1px solid var(--ean-line-strong);
+  border-radius:2px;
+  display:inline-flex;
+  font-size:12px;
+  justify-content:center;
+  min-height:40px;
+  padding:8px 12px;
+}
+.quick-panel button:not(.ui-button--ghost):not(.ean-button--ghost),.quick-sizes button{background:var(--ean-ink);color:var(--ean-paper)}
+.quick-panel button:hover:not(:disabled),.quick-sizes button:hover:not(:disabled){background:#353535}
+.quick-panel .ui-button--ghost:hover:not(:disabled),.quick-panel .ean-button--ghost:hover:not(:disabled){background:var(--ean-paper);border-color:var(--ean-line-strong);color:var(--ean-ink)}
+.quick-panel select,.quick-sizes select{background:var(--ean-paper);color:var(--ean-ink);flex:1;min-width:110px}
+.quick-panel__trigger,.quick-action{width:100%}
+.quick-panel__options{align-items:stretch;display:flex;flex:1;flex-wrap:wrap;gap:8px;min-width:0;width:100%}
+.quick-size-options{display:flex;flex:1;flex-wrap:wrap;gap:6px;min-width:0}
+.quick-size-options button{background:transparent;color:var(--ean-ink);flex:1 1 40px;min-width:40px;padding-inline:10px}
+.quick-size-options button:hover:not(:disabled){background:rgba(23,23,23,.08);color:var(--ean-ink)}
+.quick-size-options button[aria-pressed='true'],.quick-size-options button.selected{background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.quick-panel__options .ui-button,.quick-panel__options .ean-button{flex:0 1 auto;min-width:0}
+.quick-panel__options[hidden]{display:none!important}
+.quick-sizes{background:transparent!important;border:0;bottom:auto!important;display:flex;opacity:1;pointer-events:auto;position:static;transform:none!important}
+.quick-sizes button{background:transparent;color:var(--ean-ink);flex:1;min-width:40px}
+.quick-sizes button[aria-selected='true'],.quick-sizes button.selected{background:var(--ean-ink);color:var(--ean-paper)}
+
+/* Legacy card quick controls remain usable while their markup is migrated. */
+.card .quickTrigger{
+  align-items:center;
+  background:transparent;
+  border:0;
+  color:var(--ean-ink);
+  display:inline-flex;
+  font-size:12px;
+  justify-content:flex-start;
+  min-height:40px;
+  padding:8px 0;
+  position:relative;
+  transition:color var(--ean-control-motion),opacity var(--ean-control-motion),transform 100ms ease-out;
+  width:100%;
+}
+.card .quickTrigger::after{background:currentColor;bottom:4px;content:'';height:1px;left:0;position:absolute;transform:scaleX(.25);transform-origin:left;transition:transform var(--ean-control-motion);width:100%}
+.card .quickTrigger:hover:not(:disabled){color:#4b4945}
+.card .quickTrigger:hover:not(:disabled)::after{transform:scaleX(1)}
+.card .quick{align-items:stretch;display:flex;gap:6px;margin-top:10px}
+.card .quick select{background:var(--ean-paper);border:1px solid var(--ean-line-strong);border-radius:2px;flex:1;min-height:40px;min-width:0;padding:8px 10px}
+.card .quick button{background:var(--ean-ink);border:1px solid var(--ean-ink);border-radius:2px;color:var(--ean-paper);min-height:40px;padding:8px 14px}
+.card .quick button:hover:not(:disabled){background:#353535}
+
+/* Inline acknowledgement stays in the card flow so it never covers the
+   product image or shifts neighboring cards when it appears. */
+.cardFeedback{
+  color:var(--ean-muted);
+  display:block;
+  font-size:11px;
+  line-height:1.35;
+  margin-top:8px;
+  min-height:1.35em;
+  opacity:0;
+  transform:translateY(2px);
+  transition:color var(--ean-control-motion),opacity var(--ean-control-motion),transform var(--ean-control-motion);
+}
+.cardFeedback.is-visible{color:var(--ean-ink);opacity:1;transform:translateY(0)}
+
+/* Favorite button: a quiet, 40px hit area with a consistent Lucide stroke. */
+.cardPic .fav,.ean-favorite-button{
+  align-items:center;
+  background:rgba(244,243,240,.82);
+  border:1px solid transparent;
+  border-radius:2px;
+  color:var(--ean-ink);
+  display:inline-flex;
+  height:40px;
+  justify-content:center;
+  min-height:40px;
+  min-width:40px;
+  padding:0;
+  transition:background-color var(--ean-control-motion),border-color var(--ean-control-motion),color var(--ean-control-motion),transform 100ms ease-out;
+  z-index:3;
+}
+.cardPic .fav{position:absolute;right:8px;top:8px}
+.cardPic .fav:hover,.ean-favorite-button:hover{background:var(--ean-paper);border-color:var(--ean-line);color:var(--ean-danger-hover)}
+.cardPic .fav>svg,.ean-favorite-button>svg{height:20px;stroke-width:1.7;width:20px}
+.cardPic .fav[aria-pressed='true'],.cardPic .fav.is-favorite,.ean-favorite-button[aria-pressed='true']{color:var(--ean-danger-hover)}
+
+/* One quantity selector for cart and product pages. */
+.qty,.quantity-control{
+  align-items:center;
+  border:1px solid var(--ean-line-strong);
+  display:inline-flex;
+  gap:0;
+  margin:25px 0;
+  min-height:42px;
+  width:max-content;
+}
+.qty button,.quantity-control__button{
+  align-items:center;
+  background:transparent;
+  border:0;
+  color:var(--ean-ink);
+  display:inline-flex;
+  justify-content:center;
+  min-height:40px;
+  min-width:40px;
+  padding:8px;
+  transition:background-color var(--ean-control-motion),color var(--ean-control-motion),opacity var(--ean-control-motion),transform 100ms ease-out;
+}
+.qty button:hover:not(:disabled),.quantity-control__button:hover:not(:disabled){background:rgba(23,23,23,.08)}
+.qty button:active:not(:disabled),.quantity-control__button:active:not(:disabled){transform:scale(.96)}
+.qty span,.quantity-control__value{align-items:center;display:inline-flex;justify-content:center;min-width:42px;padding:0 8px;text-align:center}
+.qty button:disabled,.quantity-control__button:disabled{cursor:not-allowed;opacity:.38}
+.productInfo>.qty{margin:25px 0}
+.productInfo fieldset{border:0;margin:24px 0 0;padding:0}
+.productInfo legend{font-size:13px;padding:0}
+.productInfo .sizes{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.productInfo .sizes button,.productInfo .swatch{
+  align-items:center;
+  background:transparent;
+  border:1px solid var(--ean-line-strong);
+  border-radius:2px;
+  display:inline-flex;
+  justify-content:center;
+  min-height:40px;
+  min-width:44px;
+  padding:8px 14px;
+  transition:background-color var(--ean-control-motion),border-color var(--ean-control-motion),color var(--ean-control-motion),transform 100ms ease-out;
+}
+.productInfo .sizes button:hover:not(:disabled),.productInfo .swatch:hover:not(:disabled){background:rgba(23,23,23,.08)}
+.productInfo .sizes button.selected,.productInfo .sizes button[aria-pressed='true'],.productInfo .swatch[aria-pressed='true']{background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.productInfo .productAdd{display:flex;width:100%}
+.productInfo .favoriteAction{margin:10px 0 0;width:100%}
+
+/* Filters and low-emphasis text actions. */
+.filter-button,.shopFilters>button{
+  background:transparent;
+  border:0;
+  border-bottom:1px solid transparent;
+  color:var(--ean-muted);
+  min-height:40px;
+  padding:8px 0;
+  transition:border-color var(--ean-control-motion),color var(--ean-control-motion),font-weight var(--ean-control-motion);
+}
+.filter-button:hover,.shopFilters>button:hover{color:var(--ean-ink)}
+.filter-button[aria-pressed='true'],.filter-button.active,.shopFilters>button.active,.shopFilters>button[aria-pressed='true']{border-bottom-color:var(--ean-ink);color:var(--ean-ink);font-weight:600}
+.remove,.danger-action{background:transparent;border:0;color:var(--ean-danger);min-height:40px;padding:8px 0;position:relative;text-decoration:none}
+.remove:hover,.danger-action:hover{color:var(--ean-danger-hover)}
+.remove::after,.danger-action::after{background:currentColor;bottom:5px;content:'';height:1px;left:0;position:absolute;transform:scaleX(.3);transform-origin:left;transition:transform var(--ean-control-motion);width:100%}
+.remove:hover::after,.danger-action:hover::after{transform:scaleX(1)}
+.sizeGuide,.sectionHead>a,.journalGrid article>a,.text-link-button{position:relative;text-decoration:none}
+.sizeGuide::after,.sectionHead>a::after,.journalGrid article>a::after{background:currentColor;bottom:-3px;content:'';height:1px;left:0;position:absolute;transform:scaleX(.3);transform-origin:left;transition:transform var(--ean-control-motion);width:100%}
+.sizeGuide:hover::after,.sectionHead>a:hover::after,.journalGrid article>a:hover::after{transform:scaleX(1)}
+
+@media(max-width:700px){
+  .shopPage{position:relative}
+  .ean-button,.ui-button,a.button,a.primary,a.secondary,button.button,button.primary,button.secondary{min-height:44px;max-width:100%;white-space:normal}
+  .ean-icon-button,.ui-icon-button,.cardPic .fav{min-height:40px;min-width:40px}
+  .header-action,.mobile-menu{min-height:44px;min-width:44px}
+  .mobile-menu,.ui-icon-button.mobile-menu{display:inline-flex}
+  .header-cart{min-height:44px;padding:0}
+  .header-cart>span:not(.cart-badge){display:none}
+  .ean-toast{bottom:16px;max-width:calc(100vw - 24px);overflow-wrap:anywhere;text-align:center;width:max-content}
+  .cardPic{
+    aspect-ratio:auto;
+    overflow:visible;
+  }
+  .cardMedia{
+    aspect-ratio:3/4;
+    overflow:hidden;
+    position:relative;
+  }
+  .card .quick-panel,.cardPic>.quick-panel,.cardPic>.quick-sizes{
+    background:transparent;
+    bottom:auto;
+    display:flex;
+    left:auto;
+    margin-top:8px;
+    opacity:1;
+    padding:0;
+    pointer-events:auto;
+    position:static;
+    right:auto;
+    transform:none;
+    transition:none;
+    visibility:visible;
+  }
+  /* Touch layouts expose the trigger in normal flow and stack expanded
+     controls so a narrow two-column card never creates horizontal overflow. */
+  .card .quick-panel,.cardPic>.quick-panel{flex-direction:column;width:100%}
+  .quick-panel__options{flex-direction:column;width:100%}
+  .card .quick-panel button,.card .quick-panel select,.cardPic>.quick-panel button,.cardPic>.quick-panel select{min-height:42px;min-width:0;width:100%}
+  .card .quickTrigger{font-size:12px;min-height:42px}
+  .cardFeedback{margin-top:7px;min-height:1.35em}
+  .qty,.quantity-control{margin:20px 0;max-width:100%}
+  .shopFilters{gap:16px;max-height:calc(100svh - 120px);overflow:auto}
+}
+
+footer small{align-items:center;display:inline-flex;gap:6px}
+
+/* Secondary page controls keep the same editorial rhythm as the shared
+   button primitives. */
+.successActions{align-items:center;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+.checkoutHeading{margin-bottom:28px}
+.checkoutHeading h1{margin-bottom:0}
+.notice{align-items:center;display:flex;gap:8px}
+.accountPage{margin:auto;max-width:560px;padding:90px 5vw}
+.accountPage h1{margin:12px 0}
+.accountIntro{color:var(--ean-muted);margin-bottom:30px;max-width:40ch}
+.accountForm{display:grid;gap:18px;max-width:460px}
+.accountForm label{display:grid;gap:8px;font-size:13px}
+.accountForm input{background:transparent;border:1px solid #aaa;min-height:44px;padding:11px 12px}
+.accountForm input:focus-visible{border-color:var(--ean-ink);outline:2px solid currentColor;outline-offset:2px}
+.accountMessage{color:var(--ean-ink);font-size:13px;margin:0}
+.accountSwitch{align-items:center;display:flex;gap:8px;margin-top:22px}
+.accountSwitch>span{color:var(--ean-muted);font-size:13px}
+.accountPage>.ui-button{margin-top:20px}
+@media(max-width:700px){
+  .successActions{align-items:stretch;flex-direction:column}
+  .successActions>*{width:100%}
+  .accountPage{padding:60px 5vw}
+  .accountSwitch{align-items:flex-start;flex-direction:column;gap:2px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ean-button,.ui-button,.ean-icon-button,.ui-icon-button,
+  .card .quickTrigger,.cardPic>.quick-panel,.cardPic>.quick-sizes,
+  .quick-panel button,.quick-panel select,.qty button,.quantity-control__button,
+  .ean-button::after,.ui-button::after,.text-link-button::after,
+  .sizeGuide::after,.sectionHead>a::after,.journalGrid article>a::after,
+  .cardPic .hoverImg{transition-duration:.01ms!important;transition-delay:0ms!important}
+  .ean-button__spinner,.ui-button__spinner,.ean-icon-button__spinner,.ui-icon-button__spinner{animation:none!important}
+  .cardFeedback{transition:none!important}
+  .ean-toast{transition:none!important}
+}
+
+/* Keep mobile menu links comfortable keyboard targets. */
+@media(max-width:700px){
+  nav.open a{display:block;min-height:40px;padding:10px 0}
+}
+
+/* Layout helpers for the responsive filter drawer and cart controls. */
+.shopSearch{align-items:center;border-bottom:1px solid var(--ean-line-strong);display:flex;gap:8px;min-height:44px;width:min(320px,100%)}
+.shopSearch>svg{flex:0 0 auto;stroke-width:1.7}
+.shopSearch input{border:0!important;flex:1;min-width:0;padding:10px 0!important;width:auto}
+.shopSearch input:focus{outline:0}
+.shopSearch:focus-within{border-bottom-color:var(--ean-ink)}
+.filterToggle{display:none}
+.mobileFilterHead{display:none}
+.shopSortSelect{flex:0 0 190px;width:190px}
+.filterSelect{align-items:center;display:inline-flex;font-size:12px;gap:10px;position:relative}
+.filterSelect__label{color:var(--ean-ink);flex:0 0 auto}
+.filterColorSelect{min-width:170px;width:170px}
+.cartHeader{align-items:flex-end;display:flex;justify-content:space-between;margin-bottom:35px}
+.cartHeader h1{margin-bottom:0}
+.checkoutButton{width:100%}
+.cartItem>div{min-width:0}
+.cartItem h3{overflow-wrap:anywhere}
+.gallery button{align-items:center;display:inline-flex;justify-content:center;min-height:40px;min-width:40px}
+.gallery button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.galleryThumbs{display:flex;gap:10px;margin-top:12px}
+.galleryThumbs .ui-icon-button{height:86px;min-height:40px;padding:0;width:70px}
+.galleryThumbs .ui-icon-button.sel{outline:1px solid var(--ean-ink);outline-offset:2px}
+.galleryThumbs .ui-icon-button__icon{display:block;height:100%;min-height:0;min-width:0;overflow:hidden;width:100%}
+.galleryThumbs .ui-icon-button img{display:block;height:100%;width:100%;object-fit:cover}
+
+@media(max-width:700px){
+  .shopTop{display:block}
+  .shopSearch{margin:20px 0;width:100%}
+  .shopSortSelect{width:100%}
+  .filterToggle{display:inline-flex;margin:0 0 16px}
+  .shopFilters{background:var(--ean-paper);border:1px solid var(--ean-line);display:none;flex-wrap:wrap;gap:12px;left:5vw;margin:0;padding:20px;position:absolute;right:5vw;z-index:8}
+  .shopFilters.is-open{display:flex}
+  .shopFilters:has(.ui-select.is-open){overflow:visible}
+  .mobileFilterHead{align-items:center;display:flex;justify-content:space-between;width:100%}
+  .shopFilters>button{flex:0 0 auto;max-width:100%}
+  .filterSelect{align-items:flex-start;flex:1 0 100%;flex-direction:column;max-width:100%;width:100%}
+  .filterColorSelect{width:100%}
+  .cartHeader{align-items:flex-start;margin-bottom:25px}
+  .cartItem{gap:12px}
+  .cartItem h3{font-size:16px}
+}
+
+/* Narrow touch layouts: keep intrinsic content from widening a grid track or
+   the header while preserving the existing two-column product layout. */
+@media(max-width:700px){
+  html,body,#root{max-width:100%;overflow-x:hidden;overflow-x:clip}
+  .grid>.card{min-width:0}
+  .cardPic,.cardMedia,.quick-panel{max-width:100%;min-width:0}
+  .cardMedia{height:auto}
+  .quick-panel .ui-button,.quick-panel .ean-button,.quick-panel select,.quick-size-options{max-width:100%;min-width:0}
+  .filterSelect{min-width:0}
+  .cartItem img{flex:0 0 100px}
+  .cartHeader .danger-action{flex:0 1 auto;max-width:52%;text-align:right}
+  .notice,.checkout form,.accountForm,.successActions{max-width:100%;min-width:0}
+  .notice{overflow-wrap:anywhere}
+  .heroCopy{max-width:88vw}
+  .hero h1{overflow-wrap:anywhere}
+}

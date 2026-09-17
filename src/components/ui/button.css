@@ -1,0 +1,250 @@
+/* EAN button primitives. Keep motion short, quiet, and keyboard-visible. */
+.ui-button,
+.ui-icon-button {
+  --ui-button-ink: #171717;
+  --ui-button-paper: #f4f3f0;
+  --ui-button-muted: #6d6a64;
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  justify-content: center;
+  line-height: 1.2;
+  position: relative;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease-out,
+    border-color 180ms ease-out,
+    color 180ms ease-out,
+    opacity 180ms ease-out,
+    transform 100ms ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ui-button {
+  border: 1px solid transparent;
+  gap: 10px;
+  min-height: 44px;
+  min-width: 40px;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.ui-button--sm {
+  font-size: 12px;
+  min-height: 40px;
+  padding: 8px 14px;
+}
+
+.ui-button--md {
+  font-size: 13px;
+}
+
+.ui-button--lg {
+  font-size: 14px;
+  min-height: 50px;
+  padding: 13px 24px;
+}
+
+.ui-button--primary {
+  background: var(--ui-button-ink);
+  border-color: var(--ui-button-ink);
+  color: var(--ui-button-paper);
+}
+
+.ui-button--primary:hover:not(:disabled) {
+  background: #353535;
+  border-color: #353535;
+}
+
+.ui-button--secondary {
+  background: transparent;
+  border-color: var(--ui-button-ink);
+  color: var(--ui-button-ink);
+}
+
+.ui-button--secondary:hover:not(:disabled) {
+  background: var(--ui-button-ink);
+  color: var(--ui-button-paper);
+}
+
+.ui-button--ghost {
+  background: rgba(244, 243, 240, 0.72);
+  border-color: rgba(23, 23, 23, 0.38);
+  color: var(--ui-button-ink);
+}
+
+.ui-button--ghost:hover:not(:disabled) {
+  background: var(--ui-button-ink);
+  border-color: var(--ui-button-ink);
+  color: var(--ui-button-paper);
+}
+
+.ui-button--text {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ui-button-ink);
+  min-height: 40px;
+  padding-inline: 2px;
+}
+
+.ui-button--text::after {
+  background: currentColor;
+  bottom: 6px;
+  content: '';
+  height: 1px;
+  left: 2px;
+  position: absolute;
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 180ms ease-out;
+  width: calc(100% - 4px);
+}
+
+.ui-button--text:hover:not(:disabled)::after {
+  transform: scaleX(1);
+}
+
+.ui-button--danger {
+  background: transparent;
+  border-color: transparent;
+  color: #754944;
+  min-height: 40px;
+  padding-inline: 2px;
+}
+
+.ui-button--danger:hover:not(:disabled) {
+  color: #953f36;
+}
+
+.ui-button:focus-visible,
+.ui-icon-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.ui-button:active:not(:disabled),
+.ui-icon-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.ui-button:disabled,
+.ui-icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.44;
+}
+
+.ui-button__icon,
+.ui-icon-button__icon {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+.ui-button__icon > svg,
+.ui-icon-button__icon > svg {
+  height: 1em;
+  stroke-width: 1.7;
+  width: 1em;
+}
+
+.ui-button__spinner,
+.ui-icon-button__spinner {
+  animation: ui-button-spin 800ms linear infinite;
+  flex: 0 0 auto;
+  height: 1em;
+  width: 1em;
+}
+
+.ui-icon-button {
+  border: 1px solid transparent;
+  flex: 0 0 auto;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+}
+
+.ui-icon-button--sm {
+  min-height: 40px;
+  min-width: 40px;
+}
+
+.ui-icon-button--md {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.ui-icon-button--lg {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.ui-icon-button--primary {
+  background: var(--ui-button-ink);
+  border-color: var(--ui-button-ink);
+  color: var(--ui-button-paper);
+}
+
+.ui-icon-button--primary:hover:not(:disabled) {
+  background: #353535;
+  border-color: #353535;
+}
+
+.ui-icon-button--secondary {
+  background: transparent;
+  border-color: var(--ui-button-ink);
+  color: var(--ui-button-ink);
+}
+
+.ui-icon-button--secondary:hover:not(:disabled) {
+  background: var(--ui-button-ink);
+  color: var(--ui-button-paper);
+}
+
+.ui-icon-button--ghost {
+  background: rgba(244, 243, 240, 0.72);
+  border-color: rgba(23, 23, 23, 0.38);
+  color: var(--ui-button-ink);
+}
+
+.ui-icon-button--ghost:hover:not(:disabled) {
+  /* Ghost icon controls stay quiet on hover; reserve the solid treatment
+     for explicit primary/secondary actions. */
+  background: rgba(23, 23, 23, 0.07);
+  border-color: rgba(23, 23, 23, 0.34);
+  color: var(--ui-button-ink);
+}
+
+.ui-icon-button--text,
+.ui-icon-button--danger {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ui-button-ink);
+}
+
+.ui-icon-button--danger:hover:not(:disabled) {
+  color: #953f36;
+}
+
+@keyframes ui-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-button,
+  .ui-icon-button,
+  .ui-button::after {
+    transition-duration: 0.01ms;
+  }
+
+  .ui-button__spinner,
+  .ui-icon-button__spinner {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}
