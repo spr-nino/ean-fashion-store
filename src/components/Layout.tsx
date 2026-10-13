@@ -2,6 +2,7 @@ import {useState} from 'react';
 import type {ReactNode} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowRight, Heart, Menu, Search, ShoppingBag, User, X} from 'lucide-react';
+import {SignedIn,SignedOut,UserButton} from '@clerk/clerk-react';
 import {useStore} from '../context/useStore';
 import {IconButton} from './ui';
 
@@ -18,7 +19,8 @@ export function Layout({children}:{children:ReactNode}){
       <Link className="logo" to="/" aria-label="EAN 首页">EAN</Link>
       <aside>
         <Link className="header-action" to="/shop" aria-label="搜索商品" title="搜索"><Search aria-hidden="true"/></Link>
-        <Link className="header-action" to="/account" aria-label="账户" title="账户"><User aria-hidden="true"/></Link>
+        <SignedOut><Link className="header-action" to="/account" aria-label="账户" title="账户"><User aria-hidden="true"/></Link></SignedOut>
+        <SignedIn><span className="header-action header-user"><UserButton appearance={{elements:{avatarBox:{width:'24px',height:'24px'}}}}/></span></SignedIn>
         <Link className="header-action" to="/favorites" aria-label="收藏" title="收藏"><Heart aria-hidden="true"/></Link>
         <Link className="header-cart" to="/cart" aria-label={`购物袋，${cartCount}件商品`}><ShoppingBag aria-hidden="true"/><span>购物袋</span><b className="cart-badge" aria-hidden="true">{cartCount}</b></Link>
       </aside>

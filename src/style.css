@@ -517,6 +517,24 @@ footer small{align-items:center;display:inline-flex;gap:6px}
 .accountSwitch{align-items:center;display:flex;gap:8px;margin-top:22px}
 .accountSwitch>span{color:var(--ean-muted);font-size:13px}
 .accountPage>.ui-button{margin-top:20px}
+
+/* -------------------------------------------------------------------------- */
+/* Clerk 认证                                                                  */
+/* -------------------------------------------------------------------------- */
+.authPage{display:grid;justify-items:center;gap:22px;margin:auto;max-width:560px;padding:90px 5vw}
+.authPage>small{letter-spacing:2px}
+.accountOrders{margin-top:8px}
+.accountOrders h2{font-size:15px;font-weight:600;margin:0 0 12px}
+.orderList{list-style:none;margin:0 0 26px;padding:0;border-top:1px solid var(--ean-line)}
+.orderList li{border-bottom:1px solid var(--ean-line);font-size:13px}
+.orderRow{align-items:center;color:inherit;display:flex;gap:14px;padding:13px 0}
+.orderRow:hover .orderRow__id{text-decoration:underline;text-underline-offset:3px}
+.orderRow__id{flex:1;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.orderRow__total{white-space:nowrap}
+.orderList time{color:var(--ean-muted);white-space:nowrap}
+.accountActions{display:flex;align-items:center;gap:16px;margin:4px 0 22px}
+.header-user{display:inline-flex;align-items:center}
+@media(max-width:700px){.authPage{padding:60px 5vw}}
 @media(max-width:700px){
   .successActions{align-items:stretch;flex-direction:column}
   .successActions>*{width:100%}
@@ -598,4 +616,145 @@ footer small{align-items:center;display:inline-flex;gap:6px}
   .notice{overflow-wrap:anywhere}
   .heroCopy{max-width:88vw}
   .hero h1{overflow-wrap:anywhere}
+}
+
+/* -------------------------------------------------------------------------- */
+/* 地址簿与结算明细                                                            */
+/* -------------------------------------------------------------------------- */
+.accountPage{max-width:960px}
+.accountAddresses{margin:26px 0 34px}
+.accountAddresses h2{font-size:15px;font-weight:600;margin:0 0 12px}
+.addressGrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.addressCard{background:#fff;border:1px solid var(--ean-line);box-shadow:0 4px 14px rgba(23,23,23,.05);font:inherit;padding:18px;text-align:left}
+.addressCard>header{align-items:center;display:flex;gap:8px}
+.addressBadge{background:var(--ean-ink);color:var(--ean-paper);font-size:10px;letter-spacing:1px;padding:3px 8px}
+.addressPhone{color:var(--ean-muted);font-size:12px;margin:8px 0 0}
+.addressLines{color:#3a3835;font-size:13px;line-height:1.7;margin:10px 0 0;overflow-wrap:anywhere}
+.addressCardActions{display:flex;gap:14px;margin-top:14px}
+.addressCardAdd{align-items:center;background:transparent;border:1px dashed var(--ean-line-strong);color:var(--ean-muted);display:flex;flex-direction:column;gap:8px;justify-content:center;min-height:170px;padding:18px}
+.addressCardAdd:hover{border-color:var(--ean-ink);color:var(--ean-ink)}
+.addressEmptyHint{align-items:center;display:flex;gap:6px;margin-top:16px}
+.addressForm{display:grid;gap:16px;max-width:520px}
+.addressFormRow{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.addressForm label{display:grid;font-size:13px;gap:8px}
+.addressForm input,.addressForm textarea{background:transparent;border:1px solid #aaa;font:inherit;padding:12px}
+.addressForm textarea{min-height:84px;resize:vertical}
+.addressForm .ui-select{width:100%}
+.checkoutMain .addressDefaultCheck,.accountAddresses .addressDefaultCheck{align-items:center;display:flex;font-size:13px;gap:8px;margin-top:16px}
+.addressDefaultCheck input{height:16px;padding:0;width:16px}
+.addressEditorActions{display:flex;gap:14px;margin-top:20px}
+.checkoutLayout{display:grid;gap:56px;grid-template-columns:minmax(0,1fr) 340px;margin-top:36px}
+.checkout .checkoutLayout .checkoutMain{display:block;max-width:none}
+.checkoutMain h2,.orderSummary h2{font-size:15px;font-weight:600;margin:0 0 16px}
+.addressPick{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-bottom:22px}
+.addressPickCard{cursor:pointer}
+.addressPickCard.selected{border-color:var(--ean-ink);box-shadow:0 0 0 1px var(--ean-ink),0 4px 14px rgba(23,23,23,.05)}
+.addressPickNew{align-items:center;color:var(--ean-muted);display:flex;justify-content:center;min-height:120px}
+.guestHint{color:var(--ean-muted);font-size:12px;margin-top:16px}
+.orderSummary{align-self:start;background:#fff;border:1px solid var(--ean-line);box-shadow:0 8px 24px rgba(23,23,23,.06);padding:24px;position:sticky;top:110px}
+.summaryRow{display:flex;font-size:13px;justify-content:space-between;padding:8px 0}
+.summaryRow .strike{color:#9a968f;margin-left:4px}
+.summaryTotal{border-top:1px solid var(--ean-line);font-size:15px;margin-top:8px;padding-top:14px}
+.summaryTotal strong{font-size:19px}
+.freightHint{align-items:center;background:#ebe7de;color:var(--ean-ink);display:flex;font-size:12px;gap:6px;margin:6px 0;padding:9px 12px}
+.orderSummary .checkoutButton{margin-top:16px}
+.successAddress{border:1px solid var(--ean-line);display:inline-block;font-size:13px;line-height:1.8;margin-top:18px;padding:16px 22px;text-align:left}
+.successAddress p{margin:0}
+.successAddress p:first-child{align-items:center;display:flex;gap:6px}
+.successTotals{display:flex;font-size:14px;gap:18px;justify-content:center;margin-top:14px}
+
+@media(max-width:700px){
+  .checkoutLayout{gap:36px;grid-template-columns:1fr}
+  .orderSummary{position:static}
+  .addressFormRow{grid-template-columns:1fr}
+  .successTotals{flex-direction:column;gap:6px}
+}
+
+/* -------------------------------------------------------------------------- */
+/* 订单状态机                                                                  */
+/*                                                                            */
+/* 方形节点 + 1px 连线延续 EAN 的方角极简语言;需要用户操作的状态(待付款、  */
+/* 已发货)用实心黑吸引注意,终态(已完成、已取消)退回灰阶。                  */
+/* -------------------------------------------------------------------------- */
+.statusBadge{border:1px solid var(--ean-line-strong);display:inline-block;font-size:11px;letter-spacing:1px;padding:3px 9px;white-space:nowrap}
+.statusBadge--pending,.statusBadge--shipped{background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.statusBadge--paid{border-color:var(--ean-ink);color:var(--ean-ink)}
+.statusBadge--completed{border-color:var(--ean-line);color:var(--ean-muted)}
+.statusBadge--cancelled{border-color:var(--ean-line);color:#9a968f}
+
+.orderDetail{margin:auto;max-width:720px;padding:90px 5vw}
+.orderDetail>small{letter-spacing:2px}
+.orderDetailHead{align-items:center;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.orderDetailHead h1{font-size:26px;font-weight:400;margin:12px 0;overflow-wrap:anywhere}
+.orderDetailHead .statusBadge{font-size:12px;padding:5px 12px}
+.orderDetail section{margin-top:44px}
+.orderDetail h2{font-size:15px;font-weight:600;margin:0 0 16px}
+.orderHint{color:var(--ean-muted);font-size:13px}
+
+.orderStepper{display:flex;list-style:none;margin:34px 0 0;padding:0}
+.orderStepper li{flex:1;min-width:0;position:relative;text-align:center}
+.orderStepper li::before{background:var(--ean-line);content:'';height:1px;left:-50%;position:absolute;right:50%;top:7px}
+.orderStepper li:first-child::before{display:none}
+.orderStepper li.done::before,.orderStepper li.current::before{background:var(--ean-ink)}
+.orderStepper__dot{background:var(--ean-paper);border:1px solid var(--ean-line-strong);display:block;height:15px;margin:0 auto;position:relative;width:15px;z-index:1}
+.orderStepper li.done .orderStepper__dot{background:var(--ean-ink);border-color:var(--ean-ink)}
+.orderStepper li.current .orderStepper__dot{background:var(--ean-ink);border-color:var(--ean-ink);outline:1px solid var(--ean-ink);outline-offset:3px}
+.orderStepper__label{display:block;font-size:12px;font-weight:600;margin-top:10px}
+.orderStepper li:not(.done):not(.current) .orderStepper__label{color:var(--ean-muted);font-weight:400}
+.orderStepper__time{color:var(--ean-muted);display:block;font-size:11px;margin-top:3px}
+
+.orderCancelled{align-items:center;border:1px solid var(--ean-line);color:var(--ean-muted);display:flex;gap:10px;margin-top:30px;padding:14px 18px}
+
+.orderTimeline{list-style:none;margin:0;padding:0}
+.orderTimeline li{display:flex;gap:14px;padding:0 0 22px;position:relative}
+.orderTimeline li::before{background:var(--ean-line);bottom:-2px;content:'';left:14px;position:absolute;top:34px;width:1px}
+.orderTimeline li:last-child::before{display:none}
+.orderTimeline__dot{align-items:center;background:var(--ean-paper);border:1px solid var(--ean-line-strong);color:var(--ean-muted);display:flex;flex:0 0 auto;height:29px;justify-content:center;width:29px}
+.orderTimeline li.done .orderTimeline__dot{background:var(--ean-ink);border-color:var(--ean-ink);color:var(--ean-paper)}
+.orderTimeline strong{display:block;font-size:13px;font-weight:600}
+.orderTimeline li:not(.done) strong{color:var(--ean-muted);font-weight:400}
+.orderTimeline p{color:var(--ean-muted);font-size:12px;margin:4px 0 0}
+
+.orderItems{border-top:1px solid var(--ean-line);list-style:none;margin:0;padding:0}
+.orderItems li{align-items:center;border-bottom:1px solid var(--ean-line);display:flex;gap:16px;padding:14px 0}
+.orderItems img{height:96px;object-fit:cover;width:72px}
+.orderItems__meta{flex:1;min-width:0}
+.orderItems__meta strong{display:block;font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.orderItems__meta span{color:var(--ean-muted);display:block;font-size:12px;margin-top:5px}
+.orderItems>li>span{font-size:13px;white-space:nowrap}
+
+.orderReceiver{border:1px solid var(--ean-line);font-size:13px;line-height:1.9;padding:16px 20px}
+.orderReceiver p{margin:0}
+.orderReceiver__name{font-weight:600}
+
+.orderActions{align-items:center;display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+@media(max-width:700px){
+  .orderDetail{padding:60px 5vw}
+  .orderStepper__label{font-size:11px}
+  .orderStepper__time{font-size:10px}
+  .orderItems img{height:80px;width:60px}
+  .orderActions{align-items:stretch;flex-direction:column}
+  .orderActions>*{justify-content:center;width:100%}
+}
+
+/* -------------------------------------------------------------------------- */
+/* 模拟收银台                                                                  */
+/*                                                                            */
+/* 与结算页共享 summaryRow 明细语言;支付卡片用订单摘要同款白卡,保持交易     */
+/* 流程视觉一致。                                                             */
+/* -------------------------------------------------------------------------- */
+.paymentPage{margin:auto;max-width:560px;padding:90px 5vw}
+.paymentPage>small{letter-spacing:2px}
+.paymentPage h1{margin:12px 0}
+.paymentCard{background:#fff;border:1px solid var(--ean-line);box-shadow:0 8px 24px rgba(23,23,23,.06);margin:24px 0 16px;padding:20px 22px}
+.paymentMeta{color:var(--ean-muted);font-size:13px;margin:0 0 8px;overflow-wrap:anywhere}
+.paymentTimer{align-items:center;color:var(--ean-muted);display:flex;gap:8px;font-size:13px;margin:10px 0}
+.paymentSim{align-items:center;display:flex;font-size:13px;gap:8px;margin:6px 0 14px}
+.paymentSim input{height:16px;padding:0;width:16px}
+.paymentActions{display:grid;gap:12px;margin-top:20px}
+
+@media(max-width:700px){
+  .paymentPage{padding:60px 5vw}
+  .paymentCard{margin:20px 0 14px;padding:16px 18px}
 }

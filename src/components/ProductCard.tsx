@@ -1,7 +1,8 @@
 import {useEffect, useRef, useState} from 'react';
 import type {MouseEvent} from 'react';
 import {Heart, Check, ShoppingBag} from 'lucide-react';
-import {Link} from 'react-router-dom';
+import {Link,useLocation,useNavigate} from 'react-router-dom';
+import {useAuth} from '@clerk/clerk-react';
 import type {Product} from '../data/products';
 import {useStore} from '../context/useStore';
 import {Button, IconButton, Toast} from './ui';
@@ -10,6 +11,9 @@ interface ProductCardProps {p: Product; onOpen?: (product: Product) => void}
 
 export default function ProductCard({p,onOpen}: ProductCardProps){
   const {toggleFav,isFav,add}=useStore();
+  const {isSignedIn}=useAuth();
+  const nav=useNavigate();
+  const loc=useLocation();
   const [quick,setQuick]=useState(false);
   const [size,setSize]=useState('');
   const [added,setAdded]=useState(false);
@@ -31,7 +35,7 @@ export default function ProductCard({p,onOpen}: ProductCardProps){
       <Link to={productHref} onClick={open} className="cardMedia" aria-label={`查看${p.name}`}>
         <img src={p.images[0]} alt={p.name}/><img className="hoverImg" src={p.images[1]} alt="" aria-hidden="true"/>
       </Link>
-      <IconButton className="fav" variant="ghost" size="sm" aria-label={isFav(p.id)?`取消收藏${p.name}`:`收藏${p.name}`} aria-pressed={isFav(p.id)} icon={<Heart fill={isFav(p.id)?'currentColor':'none'}/>} onClick={()=>toggleFav(p.id)}/>
+      <IconButton className="fav" variant="ghost" size="sm" aria-label={isFav(p.id)?`取消收藏${p.name}`:`收藏${p.name}`} aria-pressed={isFav(p.id)} icon={<Heart fill={isFav(p.id)?'currentColor':'none'}/>} onClick={()=>{if(!isSignedIn){nav(`/sign-in?redirect_url=${encodeURIComponent(loc.pathname)}`);return}toggleFav(p.id)}}/>
       {p.isNew&&<em>NEW</em>}
       <div className={`quick-panel ${quick?'is-open':''}`} id={`quick-panel-${p.id}`} role="group" aria-label={`快速购买${p.name}`}>
         <Button className="quick-panel__trigger" variant="ghost" size="sm" leadingIcon={added ? <Check size={15}/> : <ShoppingBag size={16}/>} onClick={()=>setQuick(!quick)} disabled={added} aria-expanded={quick && !added} aria-controls={`quick-options-${p.id}`}>{added ? '已加入购物袋 ✓' : quick ? '收起尺码' : '选择尺码'}</Button>

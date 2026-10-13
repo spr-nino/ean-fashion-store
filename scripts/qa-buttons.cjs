@@ -1,6 +1,6 @@
 const {chromium} = require('playwright');
 
-const baseUrl = 'http://127.0.0.1:5173';
+const baseUrl = process.env.QA_BASE_URL || 'http://127.0.0.1:5173';
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -38,7 +38,10 @@ function assert(condition, message) {
 
   const favorite = page.locator('.card .fav').first();
   await favorite.click();
-  assert(await favorite.getAttribute('aria-pressed') === 'true', '收藏状态未更新');
+  await page.waitForURL('**/sign-in**');
+  assert(page.url().includes('redirect_url'), '未登录收藏跳转缺少回跳参数');
+  await page.goto(`${baseUrl}/shop`, {waitUntil: 'domcontentloaded'});
+  await page.getByRole('heading', {name: '商店 / Shop'}).waitFor();
 
   const keyboardQuickTrigger = page.locator('.quick-panel__trigger').first();
   await keyboardQuickTrigger.focus();
@@ -70,14 +73,48 @@ function assert(condition, message) {
   await page.getByRole('heading', {name: '演示结算'}).waitFor();
   const submit = page.locator('.checkoutButton');
   await submit.click();
-  assert(await page.getByRole('alert').innerText() === '请填写完整且正确的收货信息', '结算校验反馈异常');
-  await page.fill('#checkout-name', '测试用户');
-  await page.fill('#checkout-phone', '13800138000');
-  await page.fill('#checkout-address', '上海市静安区测试路 1 号');
+  assert(await page.getByRole('alert').innerText() === '请填写收货人姓名', '结算校验反馈异常');
+  await page.fill('#checkout-address-name', '测试用户');
+  await page.fill('#checkout-address-phone', '13800138000');
+  await page.fill('#checkout-address-province', '上海市');
+  await page.fill('#checkout-address-city', '上海市');
+  await page.fill('#checkout-address-detail', '静安区测试路 1 号');
+  await page.fill('#checkout-address-postcode', '200000');
   await submit.click();
   assert(await submit.isDisabled(), '提交 loading 未禁止重复点击');
+  await page.waitForURL('**/payment/**');
+  await page.getByRole('heading', {name: '模拟收银台'}).waitFor();
+
+  const simToggle = page.getByRole('checkbox', {name: /模拟支付失败/});
+  await simToggle.check();
+  await page.getByRole('button', {name: /确认支付/}).click();
+  await page.getByRole('alert').waitFor();
+  assert(await page.getByRole('alert').innerText() === '模拟支付失败，请重试', '模拟支付失败反馈异常');
+  assert(page.url().includes('/payment/'), '支付失败后不应离开收银台');
+  await simToggle.uncheck();
+  await page.getByRole('button', {name: /确认支付/}).click();
   await page.waitForURL('**/order-success');
   await page.getByRole('heading', {name: '感谢你的选择。'}).waitFor();
+
+  await page.goto(`${baseUrl}/product/ean-2`, {waitUntil: 'domcontentloaded'});
+  await page.getByRole('button', {name: 'M', exact: true}).click();
+  await page.locator('.productAdd').click();
+  await page.waitForTimeout(500);
+  await page.getByRole('link', {name: /购物袋/}).click();
+  await page.waitForURL('**/cart');
+  await page.getByRole('button', {name: '进入演示结算'}).click();
+  await page.waitForURL('**/checkout');
+  await page.fill('#checkout-address-name', '测试用户');
+  await page.fill('#checkout-address-phone', '13800138000');
+  await page.fill('#checkout-address-province', '上海市');
+  await page.fill('#checkout-address-city', '上海市');
+  await page.fill('#checkout-address-detail', '静安区测试路 1 号');
+  await page.fill('#checkout-address-postcode', '200000');
+  await page.locator('.checkoutButton').click();
+  await page.waitForURL('**/payment/**');
+  await page.getByRole('button', {name: '取消订单'}).click();
+  await page.getByRole('button', {name: '确认取消?'}).click();
+  await page.getByRole('heading', {name: '订单已取消'}).waitFor();
 
   await page.setViewportSize({width: 390, height: 844});
   await page.goto(`${baseUrl}/shop`, {waitUntil: 'networkidle'});
@@ -113,12 +150,12 @@ function assert(condition, message) {
   await page.reload({waitUntil: 'domcontentloaded'});
   await page.getByRole('button', {name: '已收藏'}).waitFor();
   await page.goto(`${baseUrl}/favorites`, {waitUntil: 'domcontentloaded'});
-  assert(await page.getByRole('link', {name: '无界长款大衣'}).count(), '收藏刷新后未保留');
+  await page.getByRole('heading', {name: '登录'}).waitFor();
   await page.goto(`${baseUrl}/account`, {waitUntil: 'domcontentloaded'});
   assert(await page.getByRole('heading', {name: '登录'}).count(), '账户路由未打开');
   assert(errors.length === 0, `浏览器控制台错误：${errors.join(' | ')}`);
 
-  console.log('Browser QA passed: CTA, navigation, favorite, quick add, cart quantity, checkout validation/loading, order success, 390px menu/filter and overflow.');
+  console.log('Browser QA passed: CTA, navigation, favorite auth gate, quick add, cart quantity, checkout validation/loading, cashier failure/retry, cashier cancel, order success, 390px menu/filter and overflow.');
   await browser.close();
 })().catch(error => {
   console.error(error);

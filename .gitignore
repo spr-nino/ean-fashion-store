@@ -29,3 +29,6 @@ debug-*.png
 
 # Vercel project metadata
 .vercel
+
+# Local Claude Code config
+.claude/
