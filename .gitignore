@@ -32,3 +32,4 @@ debug-*.png
 
 # Local Claude Code config
 .claude/
+.env*
